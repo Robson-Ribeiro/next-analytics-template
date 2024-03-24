@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { analytics } from "./utils/analytics";
+import { getDate } from "./utils/index"
 
 export default async function analyticsMiddleware(req: NextRequest) {
     if(req.nextUrl.pathname === '/') {
         // Track logic
         try {
-            //analytics.register(data)
+            analytics.register('home', getDate())
         } catch (error) {
             console.log(error)
         }
