@@ -4,7 +4,6 @@ import { getDate } from "./utils/index"
 
 export default async function analyticsMiddleware(req: NextRequest) {
     if(req.nextUrl.pathname === '/') {
-        // Track logic
         try {
             analytics.register('home', getDate())
         } catch (error) {
@@ -12,6 +11,11 @@ export default async function analyticsMiddleware(req: NextRequest) {
         }
         console.log("Tracking the route /")
     } else if (req.nextUrl.pathname === "/analytics") {
+        try {
+            analytics.register('analytics', getDate())
+        } catch (error) {
+            console.log(error)
+        }
         console.log("You are in analytics")
     } else {
         console.log("Untracked")
