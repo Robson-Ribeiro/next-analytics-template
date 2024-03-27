@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "@tremor/react": "^3.14.1",
     "@upstash/redis": "^1.29.0",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.0.22",
